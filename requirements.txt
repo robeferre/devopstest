@@ -1,0 +1,13 @@
+beautifulsoup4==4.4.1
+chardet==2.3.0
+click==6.7
+Flask==0.12.2
+Flask-MySQL==1.4.0
+html5lib==0.999
+itsdangerous==0.24
+Jinja2==2.10
+lxml==3.5.0
+MarkupSafe==1.0
+PyMySQL==0.8.0
+six==1.10.0
+Werkzeug==0.14.1

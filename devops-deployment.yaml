@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: devopstest
+spec: 
+  replicas: 3
+  selector: 
+    matchLabels: 
+      app: devopstest
+      tier: frontend
+  template: 
+    metadata: 
+      labels: 
+        app: devopstest
+        tier: frontend
+    spec: 
+      containers: 
+        - 
+          env: 
+            - 
+              name: GET_HOSTS_FROM
+              value: dns
+            - 
+              name: MYSQL_DATABASE_USER
+              value: user
+            - 
+              name: MYSQL_DATABASE_PASSWORD
+              value: user
+            - 
+              name: MYSQL_DATABASE_DB
+              value: BucketList
+            - 
+              name: MYSQL_DATABASE_HOST
+              value: "10.101.1.12"
+            - 
+              name: MYSQL_DATABASE_PORT
+              value: "3306"
+          image: "robeferre/devopstest:latest"
+          name: app
+          ports: 
+            - 
+              containerPort: 80
+          resources: 
+            requests: 
+              cpu: 100m
+              memory: 100Mi
+
